@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import Countries from './components/Countries/Countries'
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -8,7 +9,7 @@ function App() {
     const loadCountries = async() => {
       const res = await fetch('https://restcountries.com/v3.1/all')
       const data = await res.json()
-      console.log(data);
+      setCountries(data);
     }
     loadCountries()
   },[])
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to Bongo Travelers Group</h1>
-    
+      <Countries countries={countries}></Countries>
     </div>
   )
 }
