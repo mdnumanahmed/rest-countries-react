@@ -1,19 +1,24 @@
 import React from "react";
 
-const Country = () => {
+const Country = ({country}) => {
+    console.log(country);
+    const {name, flags, area, population, capital} = country
   return (
-    <div className="card w-full glass">
-      <figure>
+    <div className="card w-96 glass">
+      <figure className="p-4">
         <img
-          src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="car!"
+          className="h-52 w-full rounded-md"
+          src={flags.png}
+          alt=""
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Life hack</h2>
-        <p>How to park your car at your garage?</p>
+        <h2 className="card-title">{name.common}</h2>
+        <p>Area: {area ? area : 'Area not found!'}</p>
+        <p>Population: {population ? population : 'Population not found!'}</p>
+        <p>Capital{capital? capital[0] : 'Capital not found!'}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Learn now!</button>
+          <button className="btn btn-primary">Detail</button>
         </div>
       </div>
     </div>

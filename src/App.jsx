@@ -16,8 +16,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to Bongo Travelers Group</h1>
-      <Countries countries={countries}></Countries>
+      <h1 className='text-center text-4xl font-bold my-6'>Welcome to Bongo Travelers Group</h1>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:px-10'>
+        <Countries countries={countries}></Countries>
+      </div>
     </div>
   )
 }

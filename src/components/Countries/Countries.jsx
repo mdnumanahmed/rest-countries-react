@@ -3,11 +3,11 @@ import Country from '../Country/Country';
 
 const Countries = ({countries}) => {
     return (
-        <div>
+        <>
             {
                 countries.map(country => <Country country={country}/>)
             }
-        </div>
+        </>
     );
 };
 
